@@ -1,0 +1,16 @@
+.sidebar {
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: var(--topnav-bg-color);
+
+  padding: 20px;
+
+  border-right: 1px solid var(--main-txt-color);
+}
+
+@media only screen and (max-width: 375px) {
+  .sidebar {
+    width: 100vw;
+    height: 100vh;
+  }
+}

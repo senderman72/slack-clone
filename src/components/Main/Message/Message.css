@@ -1,0 +1,12 @@
+.message-data {
+  display: flex;
+  gap: 8px;
+}
+
+.message-data img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+
+  border-radius: 50%;
+}

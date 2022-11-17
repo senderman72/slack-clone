@@ -1,0 +1,14 @@
+.side-bar-channels a {
+  color: var(--main-txt-color);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.side-bar-channels ul {
+  list-style-type: none;
+}
+
+.side-bar-channels span:hover {
+  cursor: pointer;
+  background-color: #1164a3;
+}

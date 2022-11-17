@@ -1,0 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Slack-Lato, Slack-Fractions, appleLogo, sans-serif;
+  --main-txt-color: #d1d2d3b3;
+  --main-bg-color: #19171d;
+  --topnav-bg-color: #121016;
+}
+
+.App {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
