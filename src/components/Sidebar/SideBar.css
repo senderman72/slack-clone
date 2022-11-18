@@ -2,10 +2,11 @@
   height: 100vh;
   overflow-y: scroll;
   background-color: var(--topnav-bg-color);
+  color: rgb(209, 201, 211, 0.7);
 
-  padding: 20px;
+  padding-top: 50px;
 
-  border-right: 1px solid var(--main-txt-color);
+  border-right: 1px solid #e8e8e821;
 }
 
 @media only screen and (max-width: 375px) {

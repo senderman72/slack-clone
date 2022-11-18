@@ -1,14 +1,31 @@
 .side-bar-channels a {
   color: var(--main-txt-color);
+  cursor: pointer;
+
+  text-align: center;
+  user-select: none;
+
+  margin-right: 0;
+  opacity: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
   font-size: 15px;
   text-decoration: none;
+}
+
+.side-bar-channels li.active {
+  background-color: #1164a3;
 }
 
 .side-bar-channels ul {
   list-style-type: none;
 }
 
-.side-bar-channels span:hover {
-  cursor: pointer;
-  background-color: #1164a3;
+.side-bar-channels li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 15px;
 }

@@ -1,0 +1,25 @@
+.login {
+  width: 100vw;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: var(--p-channel_sidebar__top-nav-bg);
+}
+
+.login h1 {
+  color: var(--main-txt-color);
+}
+
+.login button {
+  margin: 150px;
+  padding: 10px;
+
+  background-color: var(--p-channel_sidebar__muted-text-color);
+
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

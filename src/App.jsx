@@ -2,11 +2,13 @@ import { useState } from "react";
 import Main from "./components/Main/Main";
 import { Route, Routes, Outlet } from "react-router-dom";
 import SideBar from "./components/Sidebar/SideBar";
+import TopNav from "./components/TopNav/TopNav";
 import Login from "./components/Login/Login";
 
 function Layout() {
   return (
     <>
+      <TopNav />
       <SideBar />
       <Outlet />
     </>

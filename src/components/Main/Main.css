@@ -5,8 +5,6 @@ main {
 
   display: grid;
   grid-template-rows: 1fr auto;
-
-  padding: 20px;
 }
 
 .message-box {
@@ -14,30 +12,38 @@ main {
   justify-content: center;
   align-items: center;
 
+  line-height: 1.46668;
+  font-size: 15px;
+
   display: grid;
   grid-template-columns: 1fr auto;
 
   padding: 20px;
-  border: 1px solid var(--main-txt-color);
+  border: 1px solid #e8e8e821;
   border-radius: 8px;
 
-  color: var(--main-txt-color);
+  color: #d1d2d3;
 }
 
-.message-box input {
+.message-box textarea {
   font-size: 15px;
   border: none;
   outline: none;
   background-color: var(--main-bg-color);
+  max-height: 200px;
 
-  color: var(--main-txt-color);
+  resize: vertical;
+
+  color: #d1d2d3;
 }
 
 .message-box .send {
-  background-color: green;
+  background-color: #007a5a;
   color: #fff;
   padding: 10px;
   border-radius: 8px;
+
+  font-family: Slack-Lato, Slack-Fractions, appleLogo, sans-serif;
 
   cursor: pointer;
   border: none;
@@ -48,12 +54,14 @@ main {
 }
 
 .messages-container {
+  width: 100%;
   background-color: var(--main-bg-color);
   color: var(--main-txt-color);
   display: flex;
   flex-direction: column-reverse;
   gap: 30px;
-  padding: 30px;
 
+  padding: 48px 20px 30px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }

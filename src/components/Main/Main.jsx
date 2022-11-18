@@ -47,7 +47,7 @@ export default function Main() {
           ))}
         </div>
         <div className="message-box">
-          <input
+          <textarea
             type="text"
             value={text}
             onChange={(e) => {
@@ -72,7 +72,7 @@ export default function Main() {
                 });
               }}
             >
-              Send - {id}
+              Send
             </button>
           </div>
         </div>
