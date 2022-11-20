@@ -15,7 +15,7 @@
 
 .login button {
   margin: 150px;
-  padding: 10px;
+  padding: 15px;
   color: black;
   width: 200px;
 
@@ -24,4 +24,8 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.google {
+  width: 20px;
 }
