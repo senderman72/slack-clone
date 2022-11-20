@@ -22,7 +22,17 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route element={<Layout />}>
           <Route path="/channels/:id" element={<Main />} />
-          <Route path="*" element={<p>404</p>} />
+          <Route
+            path="*"
+            element={
+              <div className="startpage">
+                <h1>
+                  Welcome to my slack clone👋🏽, choose a channel and start
+                  chatting💬
+                </h1>
+              </div>
+            }
+          />
         </Route>
       </Routes>
     </div>

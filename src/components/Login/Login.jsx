@@ -16,7 +16,7 @@ export default function Login() {
           console.log(user);
         }}
       >
-        Log in with Google
+        <h3>Log in with Google</h3>
       </button>
     </div>
   );
