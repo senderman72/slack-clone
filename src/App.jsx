@@ -1,9 +1,9 @@
-import { useState } from "react";
 import Main from "./components/Main/Main";
-import { Route, Routes, Outlet } from "react-router-dom";
+import { Route, Routes, Outlet, Navigate } from "react-router-dom";
 import SideBar from "./components/Sidebar/SideBar";
 import TopNav from "./components/TopNav/TopNav";
 import Login from "./components/Login/Login";
+import { useState } from "react";
 
 function Layout() {
   return (
@@ -16,10 +16,13 @@ function Layout() {
 }
 
 function App() {
+  const [cartIsEmpty] = useState(false);
+
   return (
     <div className="App">
       <Routes>
         <Route path="/login" element={<Login />} />
+
         <Route element={<Layout />}>
           <Route path="/channels/:id" element={<Main />} />
           <Route

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Main.css";
 import Message from "./Message/Message";
 import { useParams } from "react-router-dom";
+import { AiOutlineSend } from "react-icons/ai";
 
 import {
   collection,
@@ -72,7 +73,7 @@ export default function Main() {
                 });
               }}
             >
-              Send
+              <AiOutlineSend />
             </button>
           </div>
         </div>
