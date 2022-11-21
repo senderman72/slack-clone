@@ -10,6 +10,11 @@ import "./Login.css";
 export default function Login() {
   const navigate = useNavigate();
 
+  if (auth.currentUser) {
+    navigate("/channels");
+    return <></>;
+  }
+
   console.log(auth.currentUser);
   return (
     <div className="login">

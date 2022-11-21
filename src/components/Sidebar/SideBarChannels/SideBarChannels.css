@@ -29,3 +29,30 @@
   gap: 8px;
   padding: 7px 15px;
 }
+
+#sidebar-skeleton {
+  animation: pulse 2000ms infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+#sidebar-skeleton p {
+  background-color: rgb(80, 79, 84);
+  color: transparent;
+  border-radius: 99px;
+}
+
+#sidebar-skeleton div {
+  width: 16px;
+  height: 16px;
+  background-color: rgb(80, 79, 84);
+  border-radius: 99px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

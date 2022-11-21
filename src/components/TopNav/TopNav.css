@@ -5,6 +5,26 @@
   top: 0;
   left: 0;
 
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
+  padding: 10px;
+
   background-color: var(--topnav-bg-color);
   box-shadow: 0 1px 0 0 rgb(209 210 211 / 10%);
+}
+
+.top-nav img {
+  width: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #1164a3;
+}
+
+.top-nav h3 {
+  color: #d1d2d3;
+  font-size: 15px;
 }

@@ -29,12 +29,37 @@ export default function SideBarChannels() {
   return (
     <div className="side-bar-channels">
       <ul>
-        {channels.map((channel) => (
-          <li className={id === channel.id ? "active" : ""}>
-            <Hash size={12} style={{ flexShrink: "0" }} />
-            <Link to={`/channels/${channel.id}`}>{channel.name}</Link>
-          </li>
-        ))}
+        {channels.length > 0 ? (
+          channels.map((channel) => (
+            <li className={id === channel.id ? "active" : ""}>
+              <Hash size={12} style={{ flexShrink: "0" }} />
+              <Link to={`/channels/${channel.id}`}>{channel.name}</Link>
+            </li>
+          ))
+        ) : (
+          <>
+            <li id="sidebar-skeleton">
+              <div></div>
+              <p>randodsm</p>
+            </li>
+            <li id="sidebar-skeleton">
+              <div></div>
+              <p>randoffm</p>
+            </li>
+            <li id="sidebar-skeleton">
+              <div></div>
+              <p>randomsdfsdfs</p>
+            </li>
+            <li id="sidebar-skeleton">
+              <div></div>
+              <p>randomsdgksgsg</p>
+            </li>
+            <li id="sidebar-skeleton">
+              <div></div>
+              <p>randofsdfm</p>
+            </li>
+          </>
+        )}
       </ul>
     </div>
   );

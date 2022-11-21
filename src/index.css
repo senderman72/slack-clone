@@ -19,6 +19,8 @@ body {
   justify-content: center;
   align-items: center;
 
+  padding: 20px;
+
   background-color: #19171d;
   color: #b1b2b3;
 }
