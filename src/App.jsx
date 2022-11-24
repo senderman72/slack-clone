@@ -4,13 +4,12 @@ import SideBar from "./components/Sidebar/SideBar";
 import TopNav from "./components/TopNav/TopNav";
 import Login from "./components/Login/Login";
 import { useEffect, useState } from "react";
-import { auth } from "./firebase";
-import {useAuth} from './context/AuthContext'
+import { useAuth } from "./context/AuthContext";
 
 function Layout() {
   const navigate = useNavigate();
-  const {currentUser, fetchingUser} = useAuth()
-  console.log(currentUser)
+  const { currentUser, fetchingUser } = useAuth();
+  console.log(currentUser);
   useEffect(() => {
     if (!currentUser && !fetchingUser) {
       navigate("/login");
