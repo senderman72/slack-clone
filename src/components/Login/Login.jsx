@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { auth } from "../../firebase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 import { Slack } from "react-feather";
 import { useNavigate } from "react-router-dom";
+import {useAuth} from '../../context/AuthContext'
 
 import "./Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
+  const {currentUser} = useAuth()
 
-  if (auth.currentUser) {
-    navigate("/channels");
-    return <></>;
-  }
 
-  console.log(auth.currentUser);
+  useEffect(() => {
+    console.log(currentUser);
+    if (currentUser) {
+      navigate("/channels");
+    }
+  }, [currentUser]);
+
   return (
     <div className="login">
       <h1>
@@ -26,7 +30,7 @@ export default function Login() {
         onClick={async () => {
           const provider = new GoogleAuthProvider();
           const { user } = await signInWithPopup(auth, provider);
-          navigate("*");
+          navigate("/channels");
 
           console.log(user);
         }}

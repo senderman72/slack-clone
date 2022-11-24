@@ -43,9 +43,19 @@ export default function Main() {
     <div>
       <main>
         <div className="messages-container">
-          {messages.map((message) => (
-            <Message {...message} />
-          ))}
+          {messages.length >= 0 ? (
+            messages.map((message, index) => (
+              <Message {...message} key={index} />
+            ))
+          ) : (
+            <>
+              <li id="message-loading">
+                <div id="image"></div>
+
+                <p>randodsmfgdsisdufghsdfghifsdghiuosdfghiuogdfs</p>
+              </li>
+            </>
+          )}
         </div>
         <div className="message-box">
           <textarea

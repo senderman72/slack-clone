@@ -10,7 +10,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  margin-right: 20px;
+  margin-left: -20px;
   padding: 10px;
 
   background-color: var(--topnav-bg-color);
@@ -19,12 +19,18 @@
 
 .top-nav img {
   width: 36px;
+  height: 36px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #1164a3;
 }
 
 .top-nav h3 {
   color: #d1d2d3;
   font-size: 15px;
+}
+
+.loading {
+  animation: pulse 2000ms infinite cubic-bezier(0.4, 0, 0.6, 1);
+  background-color: var(--topnav-bg-color);
+  color: transparent;
 }

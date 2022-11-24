@@ -3,15 +3,19 @@ import { Route, Routes, Outlet, useNavigate } from "react-router-dom";
 import SideBar from "./components/Sidebar/SideBar";
 import TopNav from "./components/TopNav/TopNav";
 import Login from "./components/Login/Login";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { auth } from "./firebase";
+import {useAuth} from './context/AuthContext'
 
 function Layout() {
   const navigate = useNavigate();
-  if (!auth.currentUser) {
-    navigate("/login");
-    return <></>;
-  }
+  const {currentUser, fetchingUser} = useAuth()
+  console.log(currentUser)
+  useEffect(() => {
+    if (!currentUser && !fetchingUser) {
+      navigate("/login");
+    }
+  }, [currentUser]);
   return (
     <>
       <TopNav />

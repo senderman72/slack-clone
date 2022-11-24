@@ -68,3 +68,26 @@ main {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+#message-loading {
+  animation: pulse 2000ms infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+#message-loading p {
+  background-color: rgb(80, 79, 84);
+  color: transparent;
+  border-radius: 99px;
+  width: 50vw;
+  height: 30px;
+}
+
+#message-loading #image {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 10px;
+}
+
+#message-loading div {
+  background-color: rgb(80, 79, 84);
+  border-radius: 99px;
+}

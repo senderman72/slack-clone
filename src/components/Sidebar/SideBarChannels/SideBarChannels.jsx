@@ -30,8 +30,8 @@ export default function SideBarChannels() {
     <div className="side-bar-channels">
       <ul>
         {channels.length > 0 ? (
-          channels.map((channel) => (
-            <li className={id === channel.id ? "active" : ""}>
+          channels.map((channel,index) => (
+            <li key={index} className={id === channel.id ? "active" : ""}>
               <Hash size={12} style={{ flexShrink: "0" }} />
               <Link to={`/channels/${channel.id}`}>{channel.name}</Link>
             </li>
