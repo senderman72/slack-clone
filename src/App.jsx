@@ -35,7 +35,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/channels/:id" element={<Main />} />
           <Route
-            path="*"
+            path="/channels"
             element={
               <div className="startpage">
                 <h1>
