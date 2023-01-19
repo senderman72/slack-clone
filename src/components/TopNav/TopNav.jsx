@@ -15,13 +15,19 @@ export default function TopNav() {
 
   return (
     <div className="top-nav">
-      {id && (
-        <Link to="/channels" className="hide-on-big-screens">
-          <ChevronLeft />
-        </Link>
-      )}
-      <img src={currentUser.photoURL} />
-      <h3>{currentUser.displayName}</h3>
+      {" "}
+      <div>
+        {" "}
+        {id && (
+          <Link to="/channels" className="hide-on-big-screens">
+            <ChevronLeft />
+          </Link>
+        )}
+      </div>
+      <div className="profile">
+        <img src={currentUser.photoURL} />
+        <h3>{currentUser.displayName}</h3>
+      </div>
     </div>
   );
 }
