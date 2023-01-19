@@ -83,7 +83,7 @@ export default function Main() {
                 });
               }}
             >
-              <AiOutlineSend />
+              <AiOutlineSend className="send-icon" />
             </button>
           </div>
         </div>

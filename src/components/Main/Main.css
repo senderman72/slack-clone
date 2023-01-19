@@ -97,4 +97,9 @@ main {
     width: 100vw;
     overflow: hidden;
   }
+
+  .send-icon {
+    width: 20px;
+    height: 20px;
+  }
 }

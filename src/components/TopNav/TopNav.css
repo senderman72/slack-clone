@@ -9,7 +9,7 @@
   justify-content: end;
   align-items: center;
   gap: 10px;
-  padding: 10px;
+  padding: 20px 8px;
 
   background-color: var(--topnav-bg-color);
   box-shadow: 0 1px 0 0 rgb(209 210 211 / 10%);
@@ -57,7 +57,7 @@
     justify-content: space-between;
   }
 
-  svg {
+  .go-back {
     width: 40px;
     height: 40px;
     color: #d1d2d3;

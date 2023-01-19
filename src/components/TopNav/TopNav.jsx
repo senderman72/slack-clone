@@ -20,7 +20,7 @@ export default function TopNav() {
         {" "}
         {id && (
           <Link to="/channels" className="hide-on-big-screens">
-            <ChevronLeft />
+            <ChevronLeft className="go-back" />
           </Link>
         )}
       </div>
