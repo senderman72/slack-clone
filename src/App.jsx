@@ -1,5 +1,11 @@
 import Main from "./components/Main/Main";
-import { Route, Routes, Outlet, useNavigate } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  Outlet,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import SideBar from "./components/Sidebar/SideBar";
 import TopNav from "./components/TopNav/TopNav";
 import Login from "./components/Login/Login";
@@ -7,6 +13,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "./context/AuthContext";
 
 function Layout() {
+  const { id } = useParams();
   const navigate = useNavigate();
   const { currentUser, fetchingUser } = useAuth();
   console.log(currentUser);
@@ -19,7 +26,9 @@ function Layout() {
     <>
       <TopNav />
       <SideBar />
-      <Outlet />
+      <div className={id ? "show-on-small-screens" : "hide-on-small-screens"}>
+        <Outlet />
+      </div>
     </>
   );
 }

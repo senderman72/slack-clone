@@ -18,6 +18,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 
   padding: 20px;
 
@@ -73,4 +74,26 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 200px 1fr;
+}
+
+.hide-on-big-screens {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .hide-on-small-screens {
+    display: none;
+  }
+
+  .show-on-small-screens {
+    width: 100%;
+  }
+
+  .App {
+    grid-template-columns: 1fr;
+  }
+
+  .hide-on-big-screens {
+    display: block;
+  }
 }

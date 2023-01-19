@@ -8,10 +8,3 @@
 
   border-right: 1px solid #e8e8e821;
 }
-
-@media only screen and (max-width: 375px) {
-  .sidebar {
-    width: 100vw;
-    height: 100vh;
-  }
-}

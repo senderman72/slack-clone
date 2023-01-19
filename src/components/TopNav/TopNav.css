@@ -10,7 +10,6 @@
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  margin-left: -20px;
   padding: 10px;
 
   background-color: var(--topnav-bg-color);
@@ -33,4 +32,18 @@
   animation: pulse 2000ms infinite cubic-bezier(0.4, 0, 0.6, 1);
   background-color: var(--topnav-bg-color);
   color: transparent;
+}
+
+@media only screen and (max-width: 800px) {
+  h1 {
+    color: #d1d2d3;
+    background-color: var(--topnav-bg-color);
+    display: block;
+  }
+
+  .dropdown {
+    display: block;
+    fill: #d1d2d3;
+    cursor: pointer;
+  }
 }
