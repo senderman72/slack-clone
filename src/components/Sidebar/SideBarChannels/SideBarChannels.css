@@ -5,10 +5,7 @@
   text-align: center;
   user-select: none;
 
-  margin-right: 0;
-  opacity: 1;
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
 
   font-size: 15px;
@@ -54,5 +51,11 @@
   }
   50% {
     opacity: 0.5;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .side-bar-channels a {
+    font-size: 22px;
   }
 }
