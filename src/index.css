@@ -31,6 +31,8 @@ body {
   --main-txt-color: #d1d2d3b3;
   --main-bg-color: #19171d;
   --topnav-bg-color: #121016;
+
+  --p-channel_sidebar__top-nav-bg: #121016;
 }
 
 .App {
