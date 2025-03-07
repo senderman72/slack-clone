@@ -40,6 +40,25 @@
   color: transparent;
 }
 
+.Logout-btn {
+  background-color: #d1d2d3b3;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.Logout-btn:hover {
+  background-color: #b1b2b3;
+}
+
+.Logout-btn:active {
+  transform: scale(0.98);
+}
+
 @media only screen and (max-width: 800px) {
   h1 {
     color: #d1d2d3;
