@@ -1,10 +1,8 @@
 .sidebar {
   height: 100vh;
-  overflow-y: scroll;
-  background-color: var(--topnav-bg-color);
-  color: rgb(209, 201, 211, 0.7);
-
-  padding-top: 50px;
-
-  border-right: 1px solid #e8e8e821;
+  overflow-y: auto;
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text-secondary);
+  padding-top: var(--topnav-height);
+  border-right: 1px solid var(--color-border);
 }

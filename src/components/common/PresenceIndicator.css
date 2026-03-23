@@ -1,0 +1,13 @@
+.presence-dot {
+  display: inline-block;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.presence-online {
+  background-color: var(--color-online);
+}
+
+.presence-offline {
+  background-color: var(--color-text-muted);
+}

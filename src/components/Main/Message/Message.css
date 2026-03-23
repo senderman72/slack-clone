@@ -1,34 +1,121 @@
 .message-data {
   display: flex;
-
-  min-width: 0;
-
-  gap: 8px;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  transition: background-color 0.15s ease;
+  position: relative;
 }
 
 .message-data:hover {
-  opacity: 0.8;
+  background-color: var(--color-surface-elevated);
 }
+
 .message-data img {
   width: 36px;
   height: 36px;
   object-fit: cover;
-
-  background-color: #e8e8e821;
-
   flex-shrink: 0;
-  border-radius: 4px;
+  border-radius: 50%;
+}
+
+.message {
+  flex: 1;
+  min-width: 0;
+}
+
+.message-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
 }
 
 .message h3 {
-  color: #d1d2d3;
-  font-size: 15px;
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.message-time {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.message-edited {
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-style: italic;
 }
 
 .message p {
-  color: #d1d2d3;
-  font-size: 15px;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
   word-wrap: break-word;
-  word-break: break-all;
   overflow-wrap: break-word;
+}
+
+.message-edit textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 0.9rem;
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  outline: none;
+  resize: vertical;
+  min-height: 40px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.btn-cancel-edit,
+.btn-save-edit {
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-family: var(--font-family);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-cancel-edit {
+  background: none;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-cancel-edit:hover {
+  color: var(--color-text-primary);
+}
+
+.btn-save-edit {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-save-edit:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.reply-count-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-family: var(--font-family);
+  cursor: pointer;
+  padding: 2px 0;
+  margin-top: 2px;
+  transition: text-decoration 0.15s ease;
+}
+
+.reply-count-btn:hover {
+  text-decoration: underline;
 }

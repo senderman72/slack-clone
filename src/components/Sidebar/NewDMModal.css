@@ -1,0 +1,65 @@
+.new-dm-modal {
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dm-search-input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  margin-bottom: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.dm-search-input:focus {
+  border-color: var(--color-primary);
+}
+
+.dm-user-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.dm-user-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.dm-user-list li:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+.dm-user-list li img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dm-user-list .no-results {
+  color: var(--color-text-muted);
+  cursor: default;
+  justify-content: center;
+  padding: 20px;
+}
+
+.dm-user-list .no-results:hover {
+  background: none;
+}

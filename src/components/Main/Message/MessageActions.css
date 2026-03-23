@@ -1,0 +1,41 @@
+.message-actions {
+  position: absolute;
+  top: -12px;
+  right: 8px;
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.message-data:hover .message-actions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.message-actions button {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.message-actions button:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-hover);
+}
+
+.message-actions .action-danger:hover {
+  color: var(--color-danger);
+  background-color: rgba(239, 68, 68, 0.1);
+}

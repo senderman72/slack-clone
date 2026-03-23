@@ -1,71 +1,75 @@
 main {
   height: 100vh;
-
-  background-color: var(--main-bg-color);
-
+  background-color: var(--color-surface);
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr auto auto;
 }
 
 .message-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  line-height: 1.46668;
-  font-size: 15px;
-
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin: 0 20px 20px;
+  transition: border-color 0.2s ease;
+}
 
-  padding: 20px;
-  border: 1px solid #e8e8e821;
-  border-radius: 8px;
-
-  margin: 0px 20px 20px;
-
-  color: #d1d2d3;
+.message-box:focus-within {
+  border-color: var(--color-primary);
 }
 
 .message-box textarea {
-  font-size: 15px;
+  font-size: 0.9rem;
+  font-family: var(--font-family);
   border: none;
   outline: none;
-  background-color: var(--main-bg-color);
+  background-color: transparent;
   max-height: 200px;
-
   resize: vertical;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
 
-  color: #d1d2d3;
+.message-box textarea::placeholder {
+  color: var(--color-text-muted);
 }
 
 .message-box .send {
-  background-color: #007a5a;
+  background-color: var(--color-primary);
   color: #fff;
-  padding: 10px;
-  border-radius: 8px;
-  width: 50px;
-
-  font-family: Slack-Lato, Slack-Fractions, appleLogo, sans-serif;
-
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
   cursor: pointer;
   border: none;
+  transition: background-color 0.2s ease;
+}
+
+.message-box .send:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
 }
 
 .message-box .send:disabled {
-  opacity: 0.5;
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
 .messages-container {
   width: 100%;
-  background-color: var(--main-bg-color);
-  color: var(--main-txt-color);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
   display: flex;
   flex-direction: column-reverse;
-  gap: 30px;
-
-  padding: 48px 20px 30px;
-  overflow-y: scroll;
+  gap: 4px;
+  padding: calc(var(--topnav-height) + 8px) 20px 20px;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -74,22 +78,62 @@ main {
 }
 
 #message-loading p {
-  background-color: rgb(80, 79, 84);
+  background-color: var(--color-surface-hover);
   color: transparent;
   border-radius: 99px;
-  width: 50vw;
-  height: 30px;
+  width: 50%;
+  height: 24px;
 }
 
 #message-loading #image {
   width: 36px;
   height: 36px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 #message-loading div {
-  background-color: rgb(80, 79, 84);
+  background-color: var(--color-surface-hover);
   border-radius: 99px;
+}
+
+.pending-attachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 20px;
+}
+
+.pending-attachment {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.pending-attachment span {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pending-attachment button {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 2px;
+  line-height: 1;
+}
+
+.pending-attachment button:hover {
+  color: var(--color-danger);
 }
 
 @media only screen and (max-width: 800px) {
@@ -99,7 +143,7 @@ main {
   }
 
   .send-icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 }

@@ -1,84 +1,112 @@
 .top-nav {
   position: fixed;
   width: 100vw;
-  height: 48px;
+  height: var(--topnav-height);
   top: 0;
   left: 0;
+  z-index: 10;
 
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  padding: 20px 8px;
+  padding: 0 16px;
 
-  background-color: var(--topnav-bg-color);
-  box-shadow: 0 1px 0 0 rgb(209 210 211 / 10%);
+  background-color: var(--color-surface-elevated);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.top-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.top-nav-brand img {
+  width: 28px;
+  height: 28px;
+}
+
+.top-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .profile {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-.top-nav img {
-  width: 36px;
-  height: 36px;
+.top-nav .profile img {
+  width: 32px;
+  height: 32px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.top-nav h3 {
-  color: #d1d2d3;
-  font-size: 15px;
+.top-nav .profile h3 {
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .loading {
+  height: var(--topnav-height);
   animation: pulse 2000ms infinite cubic-bezier(0.4, 0, 0.6, 1);
-  background-color: var(--topnav-bg-color);
-  color: transparent;
+  background-color: var(--color-surface-elevated);
 }
 
-.Logout-btn {
-  background-color: #d1d2d3b3;
-  color: #333;
-  font-size: 16px;
-  padding: 10px 20px;
+.search-btn {
+  background: none;
   border: none;
-  border-radius: 5px;
+  color: var(--color-text-muted);
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease;
 }
 
-.Logout-btn:hover {
-  background-color: #b1b2b3;
+.search-btn:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-hover);
 }
 
-.Logout-btn:active {
-  transform: scale(0.98);
+.logout-btn {
+  background: none;
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  font-family: var(--font-family);
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-text-muted);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 @media only screen and (max-width: 800px) {
-  h1 {
-    color: #d1d2d3;
-    background-color: var(--topnav-bg-color);
-    display: block;
-  }
-
-  .dropdown {
-    display: block;
-    fill: #d1d2d3;
-    cursor: pointer;
-  }
-
   .top-nav {
     justify-content: space-between;
   }
 
   .go-back {
-    width: 40px;
-    height: 40px;
-    color: #d1d2d3;
+    width: 32px;
+    height: 32px;
+    color: var(--color-text-primary);
   }
 }

@@ -1,0 +1,98 @@
+.dm-list {
+  padding: 12px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.dm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  margin-bottom: 4px;
+}
+
+.dm-header h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.add-dm-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+}
+
+.add-dm-btn:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-hover);
+}
+
+.dm-list ul {
+  list-style-type: none;
+  padding: 0 8px;
+}
+
+.dm-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+}
+
+.dm-list li:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.dm-list li.active {
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+.dm-list li a {
+  flex: 1;
+  min-width: 0;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dm-name {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: color 0.15s ease;
+}
+
+.dm-list li:hover .dm-name {
+  color: var(--color-text-primary);
+}
+
+.dm-list li.active .dm-name {
+  color: white;
+}
+
+.dm-preview {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dm-list li.active .dm-preview {
+  color: rgba(255, 255, 255, 0.7);
+}

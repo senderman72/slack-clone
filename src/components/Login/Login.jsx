@@ -1,20 +1,17 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { auth } from "../../firebase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
-import { Slack } from "react-feather";
 import { useNavigate } from "react-router-dom";
-import {useAuth} from '../../context/AuthContext'
+import { useAuth } from "../../context/AuthContext";
 
 import "./Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
-  const {currentUser} = useAuth()
-
+  const { currentUser } = useAuth();
 
   useEffect(() => {
-    console.log(currentUser);
     if (currentUser) {
       navigate("/channels");
     }
@@ -22,23 +19,23 @@ export default function Login() {
 
   return (
     <div className="login">
-      <h1>
-        Welcome to my slack clone <Slack />
-      </h1>
+      <div className="login-card">
+        <div className="login-brand">
+          <h1>Pulse</h1>
+          <p>Connect and chat in real time</p>
+        </div>
 
-      <button
-        onClick={async () => {
-          const provider = new GoogleAuthProvider();
-          const { user } = await signInWithPopup(auth, provider);
-          navigate("/channels");
-
-          console.log(user);
-        }}
-      >
-        <h3>
-          Sign in with Google <FcGoogle className="google" />
-        </h3>
-      </button>
+        <button
+          onClick={async () => {
+            const provider = new GoogleAuthProvider();
+            await signInWithPopup(auth, provider);
+            navigate("/channels");
+          }}
+        >
+          <FcGoogle className="google" />
+          Sign in with Google
+        </button>
+      </div>
     </div>
   );
 }
