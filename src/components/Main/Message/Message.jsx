@@ -9,7 +9,6 @@ import { db, auth } from "../../../firebase";
 import MessageActions from "./MessageActions";
 import ReactionPicker from "./ReactionPicker";
 import ReactionBadge from "./ReactionBadge";
-import Attachment from "./Attachment";
 
 function formatTimestamp(createdAt) {
   if (!createdAt) return "";
@@ -23,7 +22,7 @@ function formatExactTime(createdAt) {
   return date.toLocaleString();
 }
 
-export default function Message({ id, collectionPath, user, text, createdAt, editedAt, reactions, attachments, replyCount, onReply }) {
+export default function Message({ id, collectionPath, user, text, createdAt, editedAt, reactions, replyCount, onReply }) {
   const [editing, setEditing] = useState(false);
   const [editText, setEditText] = useState(text);
   const [showReactions, setShowReactions] = useState(false);
@@ -99,13 +98,6 @@ export default function Message({ id, collectionPath, user, text, createdAt, edi
           </div>
         ) : (
           <p>{text}</p>
-        )}
-        {attachments && attachments.length > 0 && (
-          <div className="attachments">
-            {attachments.map((att, i) => (
-              <Attachment key={i} {...att} />
-            ))}
-          </div>
         )}
         {replyCount > 0 && (
           <button className="reply-count-btn" onClick={onReply}>

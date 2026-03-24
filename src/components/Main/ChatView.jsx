@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import "./Main.css";
 import Message from "./Message/Message";
-import FileUpload from "./FileUpload";
 import TypingIndicator from "./TypingIndicator";
 import ThreadPanel from "./Thread/ThreadPanel";
 import { AiOutlineSend } from "react-icons/ai";
@@ -22,7 +21,6 @@ import { db, auth } from "../../firebase";
 export default function ChatView({ collectionPath, onMessageSent }) {
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
-  const [pendingAttachments, setPendingAttachments] = useState([]);
   const [threadMessage, setThreadMessage] = useState(null);
   const typingTimeoutRef = useRef(null);
 
@@ -89,7 +87,7 @@ export default function ChatView({ collectionPath, onMessageSent }) {
 
   async function handleSend() {
     const trimmed = text.trim();
-    if (!trimmed && pendingAttachments.length === 0) return;
+    if (!trimmed) return;
 
     const messageData = {
       text: trimmed,
@@ -101,12 +99,7 @@ export default function ChatView({ collectionPath, onMessageSent }) {
       createdAt: new Date(),
     };
 
-    if (pendingAttachments.length > 0) {
-      messageData.attachments = pendingAttachments;
-    }
-
     setText("");
-    setPendingAttachments([]);
     updateTyping(false);
     if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);
 
@@ -128,14 +121,6 @@ export default function ChatView({ collectionPath, onMessageSent }) {
       e.preventDefault();
       handleSend();
     }
-  }
-
-  function handleUploadComplete(attachment) {
-    setPendingAttachments((prev) => [...prev, attachment]);
-  }
-
-  function removePendingAttachment(index) {
-    setPendingAttachments((prev) => prev.filter((_, i) => i !== index));
   }
 
   // Cleanup typing on unmount
@@ -162,20 +147,7 @@ export default function ChatView({ collectionPath, onMessageSent }) {
         ))}
       </div>
       <TypingIndicator parentCollection={parentCollection} parentId={parentId} />
-      {pendingAttachments.length > 0 && (
-        <div className="pending-attachments">
-          {pendingAttachments.map((att, i) => (
-            <div key={i} className="pending-attachment">
-              <span>{att.name}</span>
-              <button onClick={() => removePendingAttachment(i)} aria-label="Remove attachment">
-                &times;
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
       <div className="message-box">
-        <FileUpload onUploadComplete={handleUploadComplete} />
         <textarea
           value={text}
           onChange={handleTextChange}
@@ -183,7 +155,7 @@ export default function ChatView({ collectionPath, onMessageSent }) {
           placeholder="Write a message..."
         />
         <button
-          disabled={!text.trim() && pendingAttachments.length === 0}
+          disabled={!text.trim()}
           className="send"
           onClick={handleSend}
         >

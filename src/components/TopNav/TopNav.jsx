@@ -1,14 +1,11 @@
-import { useState } from "react";
 import "./TopNav.css";
 import { useAuth } from "../../context/AuthContext";
-import { ChevronLeft, Search } from "react-feather";
+import { ChevronLeft } from "react-feather";
 import { Link, useLocation } from "react-router-dom";
-import SearchPanel from "../Search/SearchPanel";
 
 export default function TopNav() {
   const { currentUser, logOut } = useAuth();
   const location = useLocation();
-  const [showSearch, setShowSearch] = useState(false);
 
   const isViewing =
     /^\/channels\/[^/]+/.test(location.pathname) ||
@@ -31,13 +28,6 @@ export default function TopNav() {
           <span>Pulse</span>
         </div>
         <div className="top-nav-right">
-          <button
-            className="search-btn"
-            onClick={() => setShowSearch(true)}
-            aria-label="Search messages"
-          >
-            <Search size={18} />
-          </button>
           <div className="profile">
             <img src={currentUser.photoURL} alt="" />
             <h3>{currentUser.displayName}</h3>
@@ -47,7 +37,6 @@ export default function TopNav() {
           </button>
         </div>
       </div>
-      {showSearch && <SearchPanel onClose={() => setShowSearch(false)} />}
     </>
   );
 }
